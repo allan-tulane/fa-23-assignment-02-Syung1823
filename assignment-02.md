@@ -12,54 +12,36 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  
-.  
+
+    -  Leaf dominated: 
+.  O(n^log<sub>3</sub>2)
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
-.  
-.  
-.  
-.  
-.  
+
+    - Leaf dominated O(n^log<sub>3</sub>2)
   * $W(n)=7W(n/7)+n$
-.  
-.  
-.  
-.  
-.  
+
+    - Balanced: O(n * log<sub>7</sub>n)
   * $W(n)=9W(n/3)+n^2$
-.  
-.  
-.  
-.  
-.  
+
+    - Balanced: O(n^2 * log<sub>3</sub>n)
   * $W(n)=8W(n/2)+n^3$
-.  
-.  
-.  
-.  
-.  
+
+    - Balanced: O(n^3 * log<sub>2</sub>n)
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
-.  
-.  
-.  
-.  
+
+    - Root Dominated: $O(n^{3/2}\log n)$
   * $W(n)=W(n-1)+2$
-.  
-.  
-.  
-.  
-.  
+
+    - Balanced: O(n)
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
-.  
-.  
-.  
-.  
+
+    - Balanced: O(n^c+1)
   * $W(n)=W(\sqrt{n})+1$
+
+      - Balanced:  $O(log(log(n)))$
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -67,18 +49,30 @@ and push to your github repository.
   * Algorithm $\mathcal{A}$ solves problems by dividing them into
       five subproblems of half the size, recursively solving each
       subproblem, and then combining the solutions in linear time.
+
+      - $W(n) = 5W(n/2) + n = $
+      - $O(n^{log_2 5})$
     
   * Algorithm $\mathcal{B}$ solves problems of size $n$ by
       recursively solving two subproblems of size $n-1$ and then
       combining the solutions in constant time.
+
+       - $W(n) = 2W(n-1) + 1 = $
+       - $O(2^n)$
+
     
   * Algorithm $\mathcal{C}$ solves problems of size $n$ by dividing
       them into nine subproblems of size $n/3$, recursively solving
       each subproblem, and then combining the solutions in $O(n^2)$
       time.
 
+      - $W(n) = 9W(n/3) + n^2 = $
+      - $O(n^2 log_3 n)$
+
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
+
+     - I am choosing the first algorithim since its runtime will grow the slowest as we apporach infinity.
 
 
 3. Now that you have some practice solving recurrences, let's work on
